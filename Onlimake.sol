@@ -1,6 +1,6 @@
-//! The GavCoin token contract.
+//! The Onlimake token contract.
 //!
-//! Copyright 2017 Gavin Wood, Parity Technologies Ltd.
+//! Copyright 2018 Onlimake, Parity Technologies Ltd.
 //!
 //! Licensed under the Apache License, Version 2.0 (the "License");
 //! you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@ contract Token {
 	event Approval(address indexed _owner, address indexed _spender, uint256 _value);
 }
 
-contract GavCoin {
+contract Onlimake {
 	struct Receipt {
 		uint units;
 		uint32 activation;
@@ -150,12 +150,12 @@ contract GavCoin {
 	uint public totalSupply;
 	mapping (address => Account) accounts;
 
-	uint constant base = 1000000;               // tokens are subdivisible by 1000000
+	uint constant base = 7000000;               // tokens are subdivisible by 1000000
 	uint constant tranchStep = 1 finney;        // raise price by 1 finney / tranch
 	uint constant tokensPerTranch = 100;        // 100 tokens per tranch
 	uint public price = 1 finney;               // begin at 1 finney / token
 	uint public remaining = tokensPerTranch * base;
-	uint32 constant refundActivationPeriod = 7 days;
+	uint32 constant refundActivationPeriod = 10 days;
 
 
 
